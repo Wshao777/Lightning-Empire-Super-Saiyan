@@ -1,0 +1,9 @@
+flowchart LR
+    V["風速 v"] --> CI{"v < 切入 或 v > 切出?"}
+    CI -->|是| Z["Cp = 0"]
+    CI -->|否| R["speed_ratio = v / rated"]
+    R --> SF["speed_factor<br/>≤1: r^1.5<br/>>1: max(0.55, 1-0.25(r-1))"]
+    A["葉片角 θ"] --> AF["angle_factor<br/>exp(-((θ-35)/18)^2)"]
+    SF --> CP["Cp = Cp_max × speed_factor × angle_factor"]
+    AF --> CP
+    CP --> P["P = 0.5ρAv³Cp"]
