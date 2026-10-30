@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lightning Empire｜串聯開發頁</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --line:#2a3340;
+    --text:#e8e8e8; --muted:#9aa4b2; --gold:#ffd479; --blue:#9fd3ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;line-height:1.65}
+  header{padding:28px 24px;background:linear-gradient(180deg,#1b2030,#12151b)}
+  header h1{margin:0;font-size:1.5rem;color:var(--gold)}
+  .note{color:var(--muted);font-size:.85rem}
+  nav{display:flex;flex-wrap:wrap;gap:8px;padding:12px 24px;
+    background:#12151b;border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:9}
+  nav a{color:var(--blue);text-decoration:none;padding:6px 10px;
+    border:1px solid var(--line);border-radius:8px;font-size:.9rem}
+  nav a:hover{background:#1d2431}
+  main{padding:24px;display:grid;gap:18px;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  section{background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:18px}
+  section.wide{grid-column:1/-1}
+  h2{margin:0 0 10px;font-size:1.15rem;color:var(--gold)}
+  .mermaid{background:#0b0d11;border:1px solid var(--line);
+    border-radius:10px;padding:12px;overflow-x:auto;text-align:center}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:8px}
+  th,td{border-bottom:1px solid var(--line);padding:7px;text-align:left}
+  th{color:var(--gold)}
+  .warn{color:#ffb4b4;font-size:.9rem}
+  footer{padding:20px 24px;border-top:1px solid var(--line);text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Lightning Empire｜串聯開發頁</h1>
+  <p class="note">3AI＋副駕駛・七龍珠 Z・金庸武俠・PY3 架空・氣功精氣神・風力曲線</p>
+</header>
+
+<nav>
+  <a href="#ai">3AI＋副駕駛</a>
+  <a href="#dragonball">七龍珠 Z</a>
+  <a href="#wuxia">金庸武俠</a>
+  <a href="#py3">PY3 架空</a>
+  <a href="#qigong">氣功精氣神</a>
+  <a href="#wind">風力曲線</a>
+</nav>
+
+<main>
+
+  <!-- 圖一 -->
+  <section id="ai" class="wide">
+    <h2>一、3AI＋副駕駛 架構</h2>
+    <pre class="mermaid">
+flowchart TD
+    subgraph Human["副駕駛・人類決策"]
+        H["Wshao777<br/>決策・驗收・把關"]
+    end
+    subgraph AI3["3AI 架構層"]
+        C["ChatGPT<br/>規劃・文件・副駕駛"]
+        G["Grok<br/>即時資訊・事實核對"]
+        D["DeepSeek<br/>程式・數值・Termux"]
+    end
+    subgraph Plus1["+1 平台層"]
+        GH["GitHub<br/>版本・Actions・Pages"]
+        CP["Copilot<br/>行內補完"]
+    end
+    H -->|下達任務| C
+    H -->|下達任務| G
+    H -->|下達任務| D
+    C -->|規格・文案| GH
+    G -->|核對・視角| GH
+    D -->|程式碼| GH
+    CP -.->|補完| D
+    GH -->|部署 Pages| Project["Lightning-Empire-Super-Saiyan"]
+    Project -->|回報| H
+    </pre>
+  </section>
+
+  <!-- 圖二 -->
+  <section id="dragonball" class="wide">
+    <h2>二、七龍珠 Z 篇章索引</h2>
+    <pre class="mermaid">
+flowchart LR
+    S1["賽亞人篇<br/>1–35"]
+    S2["弗利沙篇<br/>36–107"]
+    S3["加力克二世篇<br/>108–117"]
+    S4["人造人篇<br/>118–139"]
+    S5["西魯篇<br/>140–194"]
+    S6["冥界武道大會篇<br/>195–199"]
+    S7["魔人普烏篇<br/>200–291"]
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
+    S2 -.-> V1["弗利沙"]
+    S5 -.-> V2["西魯"]
+    S7 -.-> V3["魔人普烏"]
+    S1 -.-> G1["孫悟空"]
+    S4 -.-> G2["達爾"]
+    S5 -.-> G3["孫悟飯"]
+    </pre>
+    <p class="note">採常見七大篇章劃分；不同地區分篇可能略有差異。</p>
+  </section>
+
+  <!-- 圖三 -->
+  <section id="wuxia" class="wide">
+    <h2>三、金庸十五部武俠宇宙</h2>
+    <pre class="mermaid">
+flowchart TD
+    ROOT["金庸十五部武俠宇宙"]
+    ROOT --> A["飛雪連天射白鹿"]
+    ROOT --> B["笑書神俠倚碧鴛"]
+    ROOT --> C["越女劍"]
+    A --> A1["飛狐外傳"]
+    A --> A2["雪山飛狐"]
+    A --> A3["連城訣"]
+    A --> A4["天龍八部"]
+    A --> A5["射鵰英雄傳"]
+    A --> A6["白馬嘯西風"]
+    A --> A7["鹿鼎記"]
+    B --> B1["笑傲江湖"]
+    B --> B2["書劍恩仇錄"]
+    B --> B3["神鵰俠侶"]
+    B --> B4["俠客行"]
+    B --> B5["倚天屠龍記"]
+    B --> B6["碧血劍"]
+    B --> B7["鴛鴦刀"]
+    A5 --> T["射鵰三部曲"]
+    B3 --> T
+    B5 --> T
+    T --> T1["郭靖・黃蓉"]
+    T --> T2["楊過・小龍女"]
+    T --> T3["張無忌・趙敏"]
+    P2["武當・張三丰"] --> P2a["武當七俠"]
+    P2a --> P2b["張翠山 → 張無忌"]
+    </pre>
+  </section>
+
+  <!-- 圖四 -->
+  <section id="py3" class="wide">
+    <h2>四、PY3 架空世界觀</h2>
+    <p class="warn">以下為虛構設定，不代表現實組織、部署或救援行動。</p>
+    <pre class="mermaid">
+flowchart TD
+    CMD["PY3 太空戰隊<br/>架空設定"]
+    CMD --> C0["中央<br/>全球資源協調"]
+    CMD --> C1["北部<br/>親友聯絡・緊急避難"]
+    CMD --> C2["中部<br/>物資・醫療協調"]
+    CMD --> C3["南部<br/>生活援助・災害支援"]
+    CMD --> C4["東部<br/>偏遠地區關懷"]
+    CMD --> C5["西部<br/>交通・住宿支援"]
+    CMD --> C6["東北<br/>寒冷地區救助"]
+    CMD --> C7["西北<br/>水源・物資援助"]
+    CMD --> C8["東南<br/>海島・沿海救援"]
+    CMD --> C9["西南<br/>社區重建・關懷"]
+    </pre>
+  </section>
+
+  <!-- 圖五（加分） -->
+  <section id="wind" class="wide">
+    <h2>五、風力 Cp 曲線流程</h2>
+    <pre class="mermaid">
+flowchart LR
+    V["風速 v"] --> CI{"v < 切入 或 v > 切出?"}
+    CI -->|是| Z["Cp = 0"]
+    CI -->|否| R["speed_ratio = v / rated"]
+    R --> SF["speed_factor"]
+    A["葉片角 θ"] --> AF["angle_factor = exp(-((θ-35)/18)^2)"]
+    SF --> CP["Cp = Cp_max × speed_factor × angle_factor"]
+    AF --> CP
+    CP --> P["P = 0.5ρAv³Cp"]
+    </pre>
+    <p class="note">P = 0.5 × ρ × A × v³ × Cp(θ, v)；原型曲線，非工程驗證值。</p>
+  </section>
+
+  <!-- 表格補充 -->
+  <section id="qigong">
+    <h2>氣功精氣神量（虛構遊戲數值）</h2>
+    <p class="note">E = 0.30J + 0.30Q + 0.20S + 0.20T</p>
+    <table>
+      <tr><th>代號</th><th>意義</th><th>紀錄方式</th></tr>
+      <tr><td>J</td><td>精</td><td>睡眠時數・三餐</td></tr>
+      <tr><td>Q</td><td>氣</td><td>呼吸方式・分鐘數</td></tr>
+      <tr><td>S</td><td>神</td><td>精神自評 1–5</td></tr>
+      <tr><td>T</td><td>體</td><td>運動分鐘・組數</td></tr>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <p class="note">Lightning Empire｜串聯開發頁原型。PY3 為架空設定；養生內容不構成醫療建議。</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: "dark",
+    themeVariables: {
+      primaryColor: "#1d2431",
+      primaryTextColor: "#e8e8e8",
+      primaryBorderColor: "#2a3340",
+      lineColor: "#9fd3ff",
+      secondaryColor: "#171a21",
+      tertiaryColor: "#0b0d11",
+      fontFamily: "system-ui, sans-serif"
+    }
+  });
+</script>
+</body>
+</html>
